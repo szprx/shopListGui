@@ -16,12 +16,12 @@
                 <li>
                     <router-link to="/tobuy">Do kupienia</router-link>
                 </li>
-                <li @click="toggle()"><a class="dropdown-toggle">
+                <li @click="active = !active"><a class="dropdown-toggle">
                     <i class="fa fa-caret-down"></i>
                 </a></li>
                 <ul v-if="active">
-                    <li><a @click="toggle('PL')" class="language">Polski</a></li>
-                    <li><a @click="toggle('ENG')" class="language">Angielski</a></li>
+                    <li><a @click="isPL = true" class="language">Polski</a></li>
+                    <li><a @click="isPL = false" class="language">Angielski</a></li>
                 </ul>
             </ul>
         </nav>
@@ -43,12 +43,12 @@
                 <li>
                     <router-link to="/tobuy">ToBuy</router-link>
                 </li>
-                <li @click="toggle()"><a class="dropdown-toggle">
+                <li @click="active = !active"><a class="dropdown-toggle">
                     <i class="fa fa-caret-down"></i>
                 </a></li>
                 <ul v-if="active">
-                    <li><a @click="toggle('PL')" class="language">Polski</a></li>
-                    <li><a @click="toggle('ENG')" class="language">Angielski</a></li>
+                    <li><a @click="isPL = true" class="language">Polish</a></li>
+                    <li><a @click="isPL = false" class="language">English</a></li>
                 </ul>
             </ul>
         </nav>
@@ -65,12 +65,7 @@ export default {
             isPL: true
         };
     },
-    methods: {
-        toggle(lan) {
-            this.active = !this.active
-            this.isPL = lan === 'PL';
-        },
-    }
+    methods: {}
 };
 </script>
 
