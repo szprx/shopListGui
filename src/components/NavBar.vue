@@ -6,31 +6,30 @@
             <li><router-link to="/shoplist">ShopList</router-link></li>
             <li><router-link to="/bought">Bought</router-link></li>
             <li><router-link to="/tobuy">ToBuy</router-link></li>
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                <i class="fa fa-bars"></i>
-            </a>
+
         </ul>
+
     </nav>
 </template>
 
 <script>
 
-/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
-function myFunction() {
-    var x = document.getElementById("myTopnav");
-    if (x.className === "nav") {
-        x.className += " responsive";
-    } else {
-        x.className = "nav";
-    }
-}
-
 export default {
-    name: "NavBar"
+    name: "NavBar",
+    data() {
+        return {
+
+        };
+    },
+    methods: {
+
+    },
 }
 </script>
 
 <style scoped>/* Add a black background color to the top navigation */
+
+
 nav {
     position: sticky;
     background-color: #747bff;
