@@ -17,7 +17,7 @@ export default {
 
 <style scoped>
 nav {
-    background-color: #f2f2f2;
+    background-color: #535bf2;
 }
 
 ul {
@@ -29,16 +29,18 @@ ul {
 li {
     display: inline-block;
     margin-right: 10px;
+    padding-left: 60px;
+    font-size: 40px;
 }
 
 a {
     text-decoration: none;
-    color: #333;
+    color: white;
     padding: 5px;
 }
 
 a:hover {
     color: #000;
-    font-weight: bold;
+    /*font-weight: bold;*/
 }
 </style>
