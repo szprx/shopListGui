@@ -17,7 +17,7 @@
                     <router-link to="/tobuy">Do kupienia</router-link>
                 </li>
                 <li @click="active = !active"><a class="dropdown-toggle">
-                    <i class="fa fa-caret-down"></i>
+                    <i class="fa fa-language"></i>
                 </a></li>
                 <ul v-if="active">
                     <li><a @click="isPL = true" class="language">Polski</a></li>
@@ -44,7 +44,7 @@
                     <router-link to="/tobuy">ToBuy</router-link>
                 </li>
                 <li @click="active = !active"><a class="dropdown-toggle">
-                    <i class="fa fa-caret-down"></i>
+                    <i class="fa fa-language"></i>
                 </a></li>
                 <ul v-if="active">
                     <li><a @click="isPL = true" class="language">Polish</a></li>
