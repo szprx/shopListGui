@@ -1,14 +1,32 @@
 <script setup>
-import NavBar from "./components/NavBar.vue";
+import Navigator from "./components/Navigator.vue";
 </script>
 
 <template>
-    <NavBar></NavBar>
-    <hr>
-    <router-view></router-view>
+    <div class="app">
+        <Navigator/>
+        <router-view/>
+    </div>
 </template>
 
-<style scoped>
+<style lang="scss">
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+}
 
+.app {
+  min-height: 100vh;
+  position: relative;
+  background-color: #2c3e50;
+}
 
+.container {
+  padding: 0 20px;
+  max-width: 1140px;
+  margin: 0 auto;
+}
 </style>
