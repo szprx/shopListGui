@@ -2,7 +2,7 @@
     <div v-if="isPL">
         <link rel="stylesheet"
               href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <nav id="myTopnav">
+        <nav class="myTopnav">
             <ul>
                 <li>
                     <router-link to="/">Strona Główna</router-link>
@@ -20,8 +20,8 @@
                     <i class="fa fa-language"></i>
                 </a></li>
                 <ul v-if="active">
-                    <li><a @click="isPL = true" class="language">Polski</a></li>
-                    <li><a @click="isPL = false" class="language">Angielski</a></li>
+                    <li><a @click="isPL = true" class = "lang">Polski</a></li>
+                    <li><a @click="isPL = false" class = "lang" >Angielski</a></li>
                 </ul>
             </ul>
         </nav>
@@ -29,7 +29,7 @@
     <div v-else>
         <link rel="stylesheet"
               href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <nav id="myTopnav">
+        <nav class="myTopnav">
             <ul>
                 <li>
                     <router-link to="/">Home</router-link>
@@ -72,7 +72,7 @@ export default {
 <style scoped>
 
 
-nav {
+.myTopnav {
     position: sticky;
     background-color: #747bff;
     overflow: hidden;
