@@ -45,8 +45,11 @@ import Navigator from "./components/Navigator.vue";
         height: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: center;
         color: #fff;
+        padding-top: 80px;
+        @media (min-width: 980px) {
+            padding-top: 100px;
+        }
 
         h4 {
             text-transform: uppercase;

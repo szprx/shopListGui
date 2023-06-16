@@ -3,9 +3,7 @@
     <div>
         <section class="hero">
             <div class="hero-text container">
-                <div id="shopList">
-                    <h1>Shopping List</h1>
-                </div>
+                    <h1 class="list-h">Lista zakupów</h1>
                 <ul>
                     <li v-for="product of products" :key="product.id">
                         {{ product.name }}
@@ -40,13 +38,18 @@ export default {
 </script>
 
 <style scoped>
-#shopList {
-    text-align: center;
-    color: #2c3e50;
+.shopList {
+    text-align: left;
+    color: #ffffff;
     margin-top: 60px;
 }
 
 li {
     list-style: none;
+    margin: auto;
+}
+.list-h{
+    font-size: 50px;
+    margin-bottom: 10px;
 }
 </style>

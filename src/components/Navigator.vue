@@ -5,20 +5,20 @@
                 <link rel="stylesheet"
                       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
                 <img src="../assets/logo.png" alt="">
-                <h1 class="site-name">MY SHOP LIST</h1>
+                <h1 class="site-name">SZPRX</h1>
             </div>
             <ul v-show="!mobile" class="navigation">
                 <li>
-                    <router-link class="link" :to="{name: 'Home'}">Home</router-link>
+                    <router-link class="link" :to="{name: 'Home'}">Strona główna</router-link>
                 </li>
                 <li>
-                    <router-link class="link" :to="{name: 'ShopList'}">About</router-link>
+                    <router-link class="link" :to="{name: 'ShopList'}">Lista zakupów</router-link>
                 </li>
                 <li>
-                    <router-link class="link" :to="{name: 'ToBuy'}">Portfolio</router-link>
+                    <router-link class="link" :to="{name: 'ToBuy'}">Kupione</router-link>
                 </li>
                 <li>
-                    <router-link class="link" :to="{name: 'Bought'}">Contacts</router-link>
+                    <router-link class="link" :to="{name: 'Bought'}">Do kupienia</router-link>
                 </li>
                 <li @click="isPL = !isPL">
                     <i class="fa fa-language fa-2x"></i>
@@ -31,16 +31,16 @@
             <transition name="mobile-nav">
                 <ul v-show="mobileNav" class="dropdown-nav">
                     <li>
-                        <router-link class="link" :to="{name: 'Home'}">Home</router-link>
+                        <router-link class="link" :to="{name: 'Home'}">Strona główna</router-link>
                     </li>
                     <li>
-                        <router-link class="link" :to="{name: 'ShopList'}">About</router-link>
+                        <router-link class="link" :to="{name: 'ShopList'}">Lista zakupów</router-link>
                     </li>
                     <li>
-                        <router-link class="link" :to="{name: 'ToBuy'}">Portfolio</router-link>
+                        <router-link class="link" :to="{name: 'ToBuy'}">Kupione</router-link>
                     </li>
                     <li>
-                        <router-link class="link" :to="{name: 'Bought'}">Contacts</router-link>
+                        <router-link class="link" :to="{name: 'Bought'}">Do kupienia</router-link>
                     </li>
                 </ul>
             </transition>
@@ -81,7 +81,7 @@ export default {
         },
         checkScreen() {
             this.windowWidth = window.innerWidth;
-            if (this.windowWidth <= 750) {
+            if (this.windowWidth < 980) {
                 this.mobile = true;
             } else {
                 this.mobile = false;
@@ -156,6 +156,8 @@ export default {
         padding-left: 20px;
         font-weight: 600;
         color: #dddddd;
+        white-space: nowrap;
+        width: 180px;
       }
     }
 
@@ -164,6 +166,9 @@ export default {
       align-items: center;
       flex: 1;
       justify-content: flex-end;
+        li{
+            white-space: nowrap;
+        }
     }
 
     .icon {
