@@ -1,23 +1,28 @@
 <template>
-    <div id="shopList">
-        <h1>Shopping List</h1>
-    </div>
-    <ul>
-        <li v-for="product of products" :key="product.id">
-            {{ product.name }}
-        </li>
-    </ul>
 
+    <div>
+        <section class="hero">
+            <div class="hero-text container">
+                <div id="shopList">
+                    <h1>Shopping List</h1>
+                </div>
+                <ul>
+                    <li v-for="product of products" :key="product.id">
+                        {{ product.name }}
+                    </li>
+                </ul>
+            </div>
+
+        </section>
+    </div>
 
 </template>
 
 <script>
 import axios from 'axios';
-import NavBar from "../components/NavBar.vue";
 
 export default {
     name: "Home",
-    components: {NavBar},
     data() {
         return {
             products: []

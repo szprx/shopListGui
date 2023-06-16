@@ -1,8 +1,11 @@
 <template>
-    <header :class="{ 'scrolled-nav' : scrolledNav}">
+    <header v-if="isPL" :class="{ 'scrolled-nav' : scrolledNav}">
         <nav>
             <div class="branding">
+                <link rel="stylesheet"
+                      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
                 <img src="../assets/logo.png" alt="">
+                <h1 class="site-name">MY SHOP LIST</h1>
             </div>
             <ul v-show="!mobile" class="navigation">
                 <li>
@@ -16,6 +19,9 @@
                 </li>
                 <li>
                     <router-link class="link" :to="{name: 'Bought'}">Contacts</router-link>
+                </li>
+                <li @click="isPL = !isPL">
+                    <i class="fa fa-language fa-2x"></i>
                 </li>
             </ul>
             <div class="icon">
@@ -58,6 +64,8 @@ export default {
             mobile: true,
             mobileNav: null,
             windowWidth: null,
+            active: false,
+            isPL: true
         }
     },
     created() {
@@ -65,7 +73,7 @@ export default {
         this.checkScreen();
     },
     mounted() {
-        window.addEventListener('scroll',this.updateScroll)
+        window.addEventListener('scroll', this.updateScroll)
     }
     , methods: {
         toggleMobileNav() {
@@ -83,11 +91,7 @@ export default {
         },
         updateScroll() {
             const scrollPosition = window.scrollY;
-            if (scrollPosition > 50) {
-                this.scrolledNav = true;
-            } else {
-                this.scrolledNav = false;
-            }
+            this.scrolledNav = scrollPosition > 50;
         }
     },
 }
@@ -146,6 +150,12 @@ export default {
       img {
         width: 50px;
         transition: 0.5s ease all;
+      }
+
+      .site-name {
+        padding-left: 20px;
+        font-weight: 600;
+        color: #dddddd;
       }
     }
 
@@ -229,20 +239,5 @@ export default {
   }
 }
 
-.scrolled-nav {
-  background-color: #000000;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-
-  nav {
-    padding: 8px 0;
-
-    .branding {
-      img {
-        width: 40px;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-      }
-    }
-  }
-}
 
 </style>
