@@ -135,7 +135,7 @@ form {
 
 .form-control {
     display: grid;
-    grid-template-columns: 0 95% 3%;
+    grid-template-columns: 0 95% 0;
     /*background-color: #2196F3;*/
     padding: 10px;
 
@@ -145,6 +145,8 @@ form {
         text-align: center;
         padding: 20px 0;
         font-size: 30px;
+        justify-content: center;
+        display: flex;
     }
 
     i {
@@ -152,6 +154,8 @@ form {
         text-align: center;
         padding: 20px 0;
         font-size: 30px;
+        justify-content: center;
+        display: flex;
     }
 
 
