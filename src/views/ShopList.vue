@@ -8,7 +8,7 @@
                 <ul>
                     <li v-for="(product, index) in products" :key="index">
                         <label class="form-control">
-                            <input type="checkbox" v-model="product.bought" :id="product.id">
+                            <input class="checkb" type="checkbox" v-model="product.bought" :id="product.id">
                             <input class="inProd" v-model="product.name" placeholder="Dodaj produkt"/>
                             <i class="fa fa-times remove-icon" @click="removeProduct(index)"></i>
                         </label>
@@ -110,6 +110,7 @@ li {
     border: none;
     outline: none;
     color: #ffffff;
+    padding-left: 50px;
 }
 :root {
     --form-control-color: rebeccapurple;
@@ -134,8 +135,7 @@ form {
 
 .form-control {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 10px;
+    grid-template-columns: 0 95% 3%;
     /*background-color: #2196F3;*/
     padding: 10px;
 
@@ -157,9 +157,9 @@ form {
 
 }
 
-.form-control + .form-control {
-    margin-top: 1em;
-}
+/*.form-control + .form-control {*/
+/*    margin-top: 1em;*/
+/*}*/
 
 input[type="checkbox"] {
     -webkit-appearance: none;
