@@ -5,20 +5,20 @@
                 <link rel="stylesheet"
                       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
                 <img src="../assets/logo.png" alt="">
-                <h1 class="site-name">SZPRX</h1>
+                <h1 class="site-name">SZPRX / DGlazewski</h1>
             </div>
             <ul v-show="!mobile" class="navigation">
                 <li>
-                    <router-link class="link" :to="{name: 'Home'}">Strona główna</router-link>
+                    <router-link class="link" :to="{name: 'Home'}" v-html="$t('message.mainSite')"></router-link>
                 </li>
                 <li>
-                    <router-link class="link" :to="{name: 'ShopList'}">Lista zakupów</router-link>
+                    <router-link class="link" :to="{name: 'ShopList'}" v-html="$t('message.shopList')"></router-link>
                 </li>
                 <li>
-                    <router-link class="link" :to="{name: 'ToBuy'}">Kupione</router-link>
+                    <router-link class="link" :to="{name: 'Bought'}" v-html="$t('message.bought')"></router-link>
                 </li>
                 <li>
-                    <router-link class="link" :to="{name: 'Bought'}">Do kupienia</router-link>
+                    <router-link class="link" :to="{name: 'ToBuy'}" v-html="$t('message.toBuy')"></router-link>
                 </li>
                 <li>
                     <LanguageSwitcher></LanguageSwitcher>
@@ -31,19 +31,16 @@
             <transition name="mobile-nav">
                 <ul v-show="mobileNav" class="dropdown-nav">
                     <li>
-                        <router-link @click="toggleMobileNav" class="link" :to="{name: 'Home'}">Strona główna
-                        </router-link>
+                        <router-link @click="toggleMobileNav" class="link" :to="{name: 'Home'}" v-html="$t('message.mainSite')"></router-link>
                     </li>
                     <li>
-                        <router-link @click="toggleMobileNav" class="link" :to="{name: 'ShopList'}">Lista zakupów
-                        </router-link>
+                        <router-link @click="toggleMobileNav" class="link" :to="{name: 'ShopList'}" v-html="$t('message.shopList')"></router-link>
                     </li>
                     <li>
-                        <router-link @click="toggleMobileNav" class="link" :to="{name: 'ToBuy'}">Kupione</router-link>
+                        <router-link @click="toggleMobileNav" class="link" :to="{name: 'ToBuy'}" v-html="$t('message.bought')"></router-link>
                     </li>
                     <li>
-                        <router-link @click="toggleMobileNav" class="link" :to="{name: 'Bought'}">Do kupienia
-                        </router-link>
+                        <router-link @click="toggleMobileNav" class="link" :to="{name: 'Bought'}" v-html="$t('message.toBuy')"></router-link>
                     </li>
                     <li>
                         <LanguageSwitcher></LanguageSwitcher>

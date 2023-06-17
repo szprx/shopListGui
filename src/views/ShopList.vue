@@ -4,17 +4,17 @@
               href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <section class="hero">
             <div class="hero-text container">
-                <h1 class="list-h">Lista zakupów</h1>
+                <h1 class="list-h" v-html="$t('message.shopList')" ></h1>
                 <ul>
                     <li v-for="(product, index) in products" :key="index">
                         <label class="form-control">
                             <input class="checkb" type="checkbox" v-model="product.bought" :id="product.id">
-                            <input class="inProd" v-model="product.name" placeholder="Dodaj produkt"/>
+                            <input class="inProd" v-model="product.name" placeholder="..."/>
                             <i class="fa fa-times remove-icon" @click="removeProduct(index)"></i>
                         </label>
                     </li>
                 </ul>
-                <button @click="addProduct" class="add-btn"><i class="fa fa-plus"></i> Dodaj nowy produkt</button>
+                <button @click="addProduct" class="add-btn"><i class="fa fa-plus" v-html="$t('message.addNewProduct')"></i></button>
             </div>
         </section>
     </div>

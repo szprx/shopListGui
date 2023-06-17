@@ -5,10 +5,10 @@
               href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <section class="hero">
             <div class="hero-text container">
-                <h1 class="list-h">Lista kupionych produktów</h1>
+                <h1 class="list-h" v-html="$t('message.boughtList')" ></h1>
                 <ul>
                     <li v-for="(product,index) in products" :key="index">
-                            <input v-if="product.bought" class="inProd" v-model="product.name " placeholder="Dodaj produkt"/>
+                            <input v-if="product.bought" class="inProd" v-model="product.name "/>
                     </li>
                 </ul>
             </div>
