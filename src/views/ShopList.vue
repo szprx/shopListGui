@@ -10,6 +10,7 @@
                         <label class="form-control">
                             <input type="checkbox" v-model="product.bought" :id="product.id">
                             <input class="inProd" v-model="product.name" placeholder="Dodaj produkt"/>
+                            <i class="fa fa-times remove-icon" @click="removeProduct(index)"></i>
                         </label>
                     </li>
                 </ul>
@@ -18,7 +19,6 @@
         </section>
     </div>
 </template>
-
 
 <script>
 import axios from 'axios';
@@ -46,6 +46,9 @@ export default {
                 bought: false
             };
             this.products.push(newProduct);
+        },
+        removeProduct(index) {
+            this.products.splice(index, 1);
         }
     },
     beforeRouteLeave(to, from, next) {
@@ -69,9 +72,7 @@ export default {
 }
 </script>
 
-
 <style scoped>
-
 .add-btn {
     background-color: #ffffff;
     color: #000000;
@@ -89,6 +90,12 @@ export default {
 
 .add-btn i {
     margin-right: 5px;
+}
+
+.remove-icon {
+    color: red;
+    cursor: pointer;
+    margin-left: 10px;
 }
 
 li {
@@ -126,32 +133,37 @@ form {
 }
 
 .form-control {
-    font-family: system-ui, sans-serif;
-    font-size: 2rem;
-    font-weight: bold;
-    line-height: 1.1;
     display: grid;
-    grid-template-columns: 1em auto;
-    gap: 0.5em;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    /*background-color: #2196F3;*/
+    padding: 10px;
+
+
+    input {
+        background-color: rgba(255, 255, 255, 0.8);
+        text-align: center;
+        padding: 20px 0;
+        font-size: 30px;
+    }
+
+    i {
+        background-color: rgba(255, 255, 255, 0.8);
+        text-align: center;
+        padding: 20px 0;
+        font-size: 30px;
+    }
+
+
 }
 
 .form-control + .form-control {
     margin-top: 1em;
 }
 
-.form-control--disabled {
-    color: var(--form-control-disabled);
-    cursor: not-allowed;
-}
-
 input[type="checkbox"] {
-    /* Add if not using autoprefixer */
     -webkit-appearance: none;
-    /* Remove most all native input styles */
     appearance: none;
-    /* For iOS < 15 */
-    background-color: var(--form-background);
-    /* Not removed via appearance */
     margin: 0;
 
     font: inherit;
@@ -175,7 +187,6 @@ input[type="checkbox"]::before {
     transform-origin: bottom left;
     transition: 120ms transform ease-in-out;
     box-shadow: inset 1em 1em var(--form-control-color);
-    /* Windows High Contrast Mode */
     background-color: CanvasText;
 }
 
