@@ -31,16 +31,16 @@
             <transition name="mobile-nav">
                 <ul v-show="mobileNav" class="dropdown-nav">
                     <li>
-                        <router-link class="link" :to="{name: 'Home'}">Strona główna</router-link>
+                        <router-link @click="toggleMobileNav" class="link" :to="{name: 'Home'}">Strona główna</router-link>
                     </li>
                     <li>
-                        <router-link class="link" :to="{name: 'ShopList'}">Lista zakupów</router-link>
+                        <router-link @click="toggleMobileNav" class="link" :to="{name: 'ShopList'}">Lista zakupów</router-link>
                     </li>
                     <li>
-                        <router-link class="link" :to="{name: 'ToBuy'}">Kupione</router-link>
+                        <router-link @click="toggleMobileNav" class="link" :to="{name: 'ToBuy'}">Kupione</router-link>
                     </li>
                     <li>
-                        <router-link class="link" :to="{name: 'Bought'}">Do kupienia</router-link>
+                        <router-link @click="toggleMobileNav" class="link" :to="{name: 'Bought'}">Do kupienia</router-link>
                     </li>
                 </ul>
             </transition>
