@@ -23,15 +23,9 @@
 
 <script>
 import axios from 'axios';
-import bought from "./Bought.vue";
 
 export default {
     name: "Home",
-    computed: {
-        bought() {
-            return bought
-        }
-    },
     data() {
         return {
             products: [],
