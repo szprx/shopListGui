@@ -1,5 +1,4 @@
 <template>
-
     <div class="site">
         <link rel="stylesheet"
               href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -7,19 +6,19 @@
             <div class="hero-text container">
                 <h1 class="list-h">Lista zakupów</h1>
                 <ul>
-                    <li v-for="(product,index) in products" :key="index">
+                    <li v-for="(product, index) in products" :key="index">
                         <label class="form-control">
-                            <input type="checkbox" v-model="product.bought" v-bind:id="product.id">
-                            <input class="inProd" v-model="product.name " placeholder="Dodaj produkt"/>
+                            <input type="checkbox" v-model="product.bought" :id="product.id">
+                            <input class="inProd" v-model="product.name" placeholder="Dodaj produkt"/>
                         </label>
                     </li>
                 </ul>
+                <button @click="addProduct" class="add-btn"><i class="fa fa-plus"></i> Dodaj nowy produkt</button>
             </div>
-
         </section>
     </div>
-
 </template>
+
 
 <script>
 import axios from 'axios';
@@ -39,6 +38,16 @@ export default {
             console.log(error);
         }
     },
+    methods: {
+        addProduct() {
+            const newProduct = {
+                id: Date.now(),
+                name: "",
+                bought: false
+            };
+            this.products.push(newProduct);
+        }
+    },
     beforeRouteLeave(to, from, next) {
         const dataToSend = this.products.map((product) => {
             return {
@@ -46,21 +55,41 @@ export default {
                 bought: product.bought,
             };
         });
-        console.log(dataToSend)
 
-
-        axios.post('https://shoplist-tm2s.onrender.com/products/all', dataToSend).then(response => {
-            console.log(response.data);
-        })
+        axios.post('https://shoplist-tm2s.onrender.com/products/all', dataToSend)
+            .then(response => {
+                console.log(response.data);
+            })
             .catch(error => {
                 console.error(error);
             });
+
         next();
     },
 }
 </script>
 
+
 <style scoped>
+
+.add-btn {
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.add-btn:hover {
+    background-color: #555555;
+}
+
+.add-btn i {
+    margin-right: 5px;
+}
 
 li {
     list-style: none;
