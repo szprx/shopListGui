@@ -13,7 +13,54 @@ const messages = {
             addProduct: "Add product",
             addNewProduct: "    Add new product",
             golden: "GOLDEY",
-            homeGolden: ""
+            homeGolden: "                    <h1 class=\"sum-title\">Appearance</h1>\n" +
+                "                    <ul>\n" +
+                "                        <li>Golden Retrievers are medium-sized dogs with a proportional body structure.</li>\n" +
+                "                        <li>They have strong, muscular legs and a well-toned body.</li>\n" +
+                "                        <li>Their coat is dense, long, and silky, with a beautiful golden or cream coloration.</li>\n" +
+                "                        <li>They have distinctive flap-shaped ears.</li>\n" +
+                "                    </ul>\n" +
+                "\n" +
+                "                    <h1 class=\"sum-title\">Temperament</h1>\n" +
+                "                    <ul>\n" +
+                "                        <li>Golden Retrievers are known for their friendly and gentle nature.</li>\n" +
+                "                        <li>They are very social, enjoy human interaction, and get along well with children and other animals.</li>\n" +
+                "                        <li>They are intelligent and easily trainable, which makes them a popular choice as guide dogs, therapy dogs, or for search and rescue work.</li>\n" +
+                "                    </ul>\n" +
+                "\n" +
+                "                    <h1 class=\"sum-title\">Activity</h1>\n" +
+                "                    <ul>\n" +
+                "                        <li>Golden Retrievers have a moderate activity level.</li>\n" +
+                "                        <li>They are energetic dogs that require regular exercise and physical activity.</li>\n" +
+                "                        <li>They willingly participate in various activities such as long walks, runs, and swimming, as they have a natural affinity for water.</li>\n" +
+                "                    </ul>\n" +
+                "\n" +
+                "                    <h1 class=\"sum-title\">Family</h1>\n" +
+                "                    <ul>\n" +
+                "                        <li>Golden Retrievers make wonderful family pets.</li>\n" +
+                "                        <li>They are devoted and attached to their owners, making them great companions for the whole family.</li>\n" +
+                "                        <li>They are patient and gentle, which also makes them suitable for families with young children.</li>\n" +
+                "                    </ul>\n" +
+                "\n" +
+                "                    <h1 class=\"sum-title\">Coat Care</h1>\n" +
+                "                    <ul>\n" +
+                "                        <li>Due to their long and dense coat, Golden Retrievers require regular grooming to keep it in good condition.</li>\n" +
+                "                        <li>They require special attention during shedding, which occurs twice a year.</li>\n" +
+                "                        <li>Frequent brushing will help minimize hair accumulation in the home.</li>\n" +
+                "                    </ul>\n" +
+                "\n" +
+                "                    <h1 class=\"sum-title\">Health</h1>\n" +
+                "                    <ul>\n" +
+                "                        <li>Golden Retrievers are prone to certain health issues, such as hip dysplasia, eye diseases, and a tendency towards obesity.</li>\n" +
+                "                        <li>Regular veterinary visits, proper nutrition, and providing an adequate amount of physical activity are important to keep them in good health.</li>\n" +
+                "                    </ul>\n" +
+                "                    <br>\n" +
+                "                    <br>\n" +
+                "                    <p>Golden Retrievers are wonderful dog breeds cherished for their intelligence, gentleness, and friendly disposition.</p>\n" +
+                "                    <p>They are loyal and devoted companions, ideal for families and active individuals who appreciate interaction and outdoor activities.</p>\n" +
+                "\n" +
+                "\n" +
+                "                </div>\n"
 
         }
     },
