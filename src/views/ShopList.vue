@@ -81,11 +81,11 @@ li {
     outline: none;
     color: #ffffff;
 }
-
 :root {
     --form-control-color: rebeccapurple;
     --form-control-disabled: #959495;
 }
+
 *,
 *:before,
 *:after {
@@ -116,6 +116,10 @@ form {
     margin-top: 1em;
 }
 
+.form-control--disabled {
+    color: var(--form-control-disabled);
+    cursor: not-allowed;
+}
 
 input[type="checkbox"] {
     /* Add if not using autoprefixer */
@@ -123,6 +127,7 @@ input[type="checkbox"] {
     /* Remove most all native input styles */
     appearance: none;
     /* For iOS < 15 */
+    background-color: var(--form-background);
     /* Not removed via appearance */
     margin: 0;
 
@@ -148,6 +153,7 @@ input[type="checkbox"]::before {
     transition: 120ms transform ease-in-out;
     box-shadow: inset 1em 1em var(--form-control-color);
     /* Windows High Contrast Mode */
+    background-color: CanvasText;
 }
 
 input[type="checkbox"]:checked::before {
@@ -165,5 +171,4 @@ input[type="checkbox"]:disabled {
     color: var(--form-control-disabled);
     cursor: not-allowed;
 }
-
 </style>
