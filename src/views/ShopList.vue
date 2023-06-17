@@ -83,6 +83,9 @@ li {
 .list-h {
     font-size: 50px;
     margin-bottom: 10px;
+    @media (max-width: 768px) {
+        margin-top: 40px;
+    }
 }
 
 .inProd {
