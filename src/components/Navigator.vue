@@ -1,5 +1,5 @@
 <template>
-    <header v-if="isPL" :class="{ 'scrolled-nav' : scrolledNav}">
+    <header :class="{ 'scrolled-nav' : scrolledNav}">
         <nav>
             <div class="branding">
                 <link rel="stylesheet"
@@ -20,8 +20,8 @@
                 <li>
                     <router-link class="link" :to="{name: 'Bought'}">Do kupienia</router-link>
                 </li>
-                <li @click="isPL = !isPL">
-                    <i class="fa fa-language fa-2x"></i>
+                <li>
+                    <LanguageSwitcher></LanguageSwitcher>
                 </li>
             </ul>
             <div class="icon">
@@ -31,16 +31,22 @@
             <transition name="mobile-nav">
                 <ul v-show="mobileNav" class="dropdown-nav">
                     <li>
-                        <router-link @click="toggleMobileNav" class="link" :to="{name: 'Home'}">Strona główna</router-link>
+                        <router-link @click="toggleMobileNav" class="link" :to="{name: 'Home'}">Strona główna
+                        </router-link>
                     </li>
                     <li>
-                        <router-link @click="toggleMobileNav" class="link" :to="{name: 'ShopList'}">Lista zakupów</router-link>
+                        <router-link @click="toggleMobileNav" class="link" :to="{name: 'ShopList'}">Lista zakupów
+                        </router-link>
                     </li>
                     <li>
                         <router-link @click="toggleMobileNav" class="link" :to="{name: 'ToBuy'}">Kupione</router-link>
                     </li>
                     <li>
-                        <router-link @click="toggleMobileNav" class="link" :to="{name: 'Bought'}">Do kupienia</router-link>
+                        <router-link @click="toggleMobileNav" class="link" :to="{name: 'Bought'}">Do kupienia
+                        </router-link>
+                    </li>
+                    <li>
+                        <LanguageSwitcher></LanguageSwitcher>
                     </li>
                 </ul>
             </transition>
@@ -50,9 +56,13 @@
 
 <script>
 import Home from "../views/Home.vue";
+import LanguageSwitcher from "../components/LanguageSwitcher.vue"
 
 export default {
     name: "Navigator",
+    components: {
+        LanguageSwitcher,
+    },
     computed: {
         Home() {
             return Home
@@ -65,7 +75,6 @@ export default {
             mobileNav: null,
             windowWidth: null,
             active: false,
-            isPL: true
         }
     },
     created() {
@@ -166,9 +175,10 @@ export default {
       align-items: center;
       flex: 1;
       justify-content: flex-end;
-        li{
-            white-space: nowrap;
-        }
+
+      li {
+        white-space: nowrap;
+      }
     }
 
     .icon {

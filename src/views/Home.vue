@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="site">
         <section class="hero">
             <div class="hero-text container">
                 <h1 class="title">GOLDEN</h1>

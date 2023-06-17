@@ -17,6 +17,9 @@ import Navigator from "./components/Navigator.vue";
     font-family: "Raleway", sans-serif;
     font-weight: 400;
 }
+.site{
+    height: 100vh;
+}
 
 .app {
     min-height: 100vh;
@@ -27,6 +30,7 @@ import Navigator from "./components/Navigator.vue";
     padding: 0 20px;
     max-width: 1140px;
     margin: 0 auto;
+    height: 100vh;
 }
 
 .hero {
