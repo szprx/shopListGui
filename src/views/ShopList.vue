@@ -68,24 +68,10 @@ export default {
 
 <style scoped>
 
-.shopList {
-    text-align: left;
-    color: #ffffff;
-    margin-top: 60px;
-}
-
 li {
     list-style: none;
     margin: 10px;
     font-size: 20px;
-}
-
-.list-h {
-    font-size: 50px;
-    margin-bottom: 10px;
-    @media (max-width: 768px) {
-        margin-top: 40px;
-    }
 }
 
 .inProd {
@@ -130,10 +116,6 @@ form {
     margin-top: 1em;
 }
 
-.form-control--disabled {
-    color: var(--form-control-disabled);
-    cursor: not-allowed;
-}
 
 input[type="checkbox"] {
     /* Add if not using autoprefixer */
@@ -141,7 +123,6 @@ input[type="checkbox"] {
     /* Remove most all native input styles */
     appearance: none;
     /* For iOS < 15 */
-    background-color: var(--form-background);
     /* Not removed via appearance */
     margin: 0;
 
@@ -167,7 +148,6 @@ input[type="checkbox"]::before {
     transition: 120ms transform ease-in-out;
     box-shadow: inset 1em 1em var(--form-control-color);
     /* Windows High Contrast Mode */
-    background-color: CanvasText;
 }
 
 input[type="checkbox"]:checked::before {

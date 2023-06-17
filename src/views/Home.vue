@@ -69,7 +69,8 @@
                                 odpowiedniej ilości aktywności fizycznej, aby utrzymać ich w dobrej kondycji.
                             </li>
                         </ul>
-
+                        <br>
+                        <br>
                         <p>Golden Retriever to wspaniała rasa psów, która jest ceniona za swoją inteligencję, łagodność
                             i przyjacielskie usposobienie.</p>
                         <p>Są to wierni i oddani towarzysze, idealni dla rodzin i osób aktywnych, które cenią sobie
@@ -119,12 +120,13 @@ p {
 }
 
 .title {
-  font-size: 50px;
-  text-align: center;
-  margin-bottom: 10px;
   color: goldenrod;
+  font-size: 55px;
+  margin-bottom: 5px;
+  margin-top: 10px;
   @media (max-width: 768px) {
     margin-top: 40px;
+      font-size: 30px;
   }
 }
 
