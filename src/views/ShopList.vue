@@ -100,7 +100,7 @@ export default {
 
 li {
     list-style: none;
-    margin: 10px;
+    margin: 5px;
     font-size: 20px;
 }
 
@@ -112,6 +112,7 @@ li {
     color: #ffffff;
     padding-left: 50px;
 }
+
 :root {
     --form-control-color: rebeccapurple;
     --form-control-disabled: #959495;
@@ -138,32 +139,15 @@ form {
     grid-template-columns: 0 95% 0;
     /*background-color: #2196F3;*/
     padding: 10px;
-
-
-    input {
-        background-color: rgba(255, 255, 255, 0.8);
-        text-align: center;
-        padding: 20px 0;
-        font-size: 30px;
-        justify-content: center;
-        display: flex;
-    }
-
-    i {
-        background-color: rgba(255, 255, 255, 0.8);
-        text-align: center;
-        padding: 20px 0;
-        font-size: 30px;
-        justify-content: center;
-        display: flex;
-    }
-
-
 }
 
-/*.form-control + .form-control {*/
-/*    margin-top: 1em;*/
-/*}*/
+.checkb {
+    text-align: center;
+    padding: 17px;
+    font-size: 30px;
+    justify-content: center;
+    display: flex;
+}
 
 input[type="checkbox"] {
     -webkit-appearance: none;
@@ -184,14 +168,14 @@ input[type="checkbox"] {
 
 input[type="checkbox"]::before {
     content: "";
-    width: 0.65em;
-    height: 0.65em;
+    width: 1.25em;
+    height: 1.25em;
     clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
     transform: scale(0);
     transform-origin: bottom left;
     transition: 120ms transform ease-in-out;
     box-shadow: inset 1em 1em var(--form-control-color);
-    background-color: CanvasText;
+    background-color: black;
 }
 
 input[type="checkbox"]:checked::before {
