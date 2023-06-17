@@ -5,7 +5,7 @@
                 <link rel="stylesheet"
                       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
                 <img src="../assets/logo.png" alt="">
-                <h1 class="site-name">SZPRX / DGlazewski</h1>
+                <h1 class="site-name">SZPRX</h1>
             </div>
             <ul v-show="!mobile" class="navigation">
                 <li>
