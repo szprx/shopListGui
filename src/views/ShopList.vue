@@ -1,12 +1,18 @@
 <template>
 
     <div>
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <section class="hero">
             <div class="hero-text container">
                 <h1 class="list-h">Lista zakupów</h1>
                 <ul>
-                    <li v-for="product of products" :key="product.id">
+                    <li v-for="(product,index) in products" :key="index">
                         <input class="inProd" v-model="product.name " placeholder="Dodaj produkt"/>
+                        <label class="container-check">
+                            <input type="checkbox" v-model="product.bought" v-bind:id="product.id">
+                            <span class="checkmark"></span>
+                        </label>
                     </li>
                 </ul>
             </div>
@@ -18,12 +24,15 @@
 
 <script>
 import axios from 'axios';
+import bought from "./Bought.vue";
 
 export default {
-
-
-
     name: "Home",
+    computed: {
+        bought() {
+            return bought
+        }
+    },
     data() {
         return {
             products: [],
@@ -36,24 +45,24 @@ export default {
         } catch (error) {
             console.log(error);
         }
-    },beforeRouteLeave(to, from, next) {
-        // Przygotowanie danych do wysłania na serwer
-        const dataToSend = {
-            // Twoje dane do wysłania
-        };
+    },
+    beforeRouteLeave(to, from, next) {
+        const dataToSend = this.products.map((product) => {
+            return {
+                name: product.name,
+                bought: product.bought,
+            };
+        });
+        console.log(dataToSend)
 
-        // Wywołanie żądania Axios, aby wysłać dane na serwer
-        axios.post('https://shoplist-tm2s.onrender.com/products/all', dataToSend)
-            .then(response => {
-                // Obsługa odpowiedzi serwera
-                console.log(response.data);
-                next(); // Kontynuacja przechodzenia do nowej strony
-            })
+
+        axios.post('https://shoplist-tm2s.onrender.com/products/all', dataToSend).then(response => {
+            console.log(response.data);
+        })
             .catch(error => {
-                // Obsługa błędów żądania
                 console.error(error);
-                next(); // Kontynuacja przechodzenia do nowej strony, nawet w przypadku błędu
             });
+        next();
     },
 }
 </script>
